@@ -1,0 +1,16 @@
+{
+	"id":"darkness_in_the_night_boss",
+	"governingAptitude":"combat",
+	"compressHullmods":false,
+	"elite":false,
+	"scope":"PILOTED_SHIP",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"SHIP", "script":"tidal.shroud.skills.DarknessInTheNightBossSkill"}
+			]
+		}
+	]
+}

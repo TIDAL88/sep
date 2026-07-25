@@ -1,0 +1,10 @@
+{
+  "id": "insatiable_domain",
+  "type": "STAT_MOD",
+  "aiType": "CUSTOM",
+  "aiScript": "tidal.shroud.scripts.shipsystems.InsatiableDomainSystemAI",
+  "statsScript": "tidal.shroud.scripts.shipsystems.InsatiableDomainStats",
+  "useSound": "system_high_energy_focus_activate",
+  "aiHints": {
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"id":"volatile_plasma_bolter",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"ENERGY",
+	"mountTypeOverride":"ENERGY",
+	"size":"SMALL",
+	"turretSprite":"graphics/tidal/weapons/unstable_plasma_bolter.png",
+	"turretGlowSprite":"graphics/tidal/weapons/unstable_plasma_bolter_glow.png",
+	"hardpointSprite":"graphics/tidal/weapons/unstable_plasma_bolter_hardpoint.png",
+	"hardpointGlowSprite":"graphics/tidal/weapons/unstable_plasma_bolter_hardpoint_glow.png",
+	"glowColor":[255,10,50,255],
+	"turretOffsets":[6, 0], #15
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[8, 0],#15
+	"hardpointAngleOffsets":[0],
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
+	"unaffectedByProjectileSpeedBonuses":true,
+	#"animationType":"GLOW",
+	"animationType":"GLOW_AND_FLASH",
+	"muzzleFlashSpec":{"length":12.0,   # only used if animationType = MUZZLE_FLASH or GLOW_AND_FLASH
+					   "spread":4.0,
+					   "particleSizeMin":8.0,
+					   "particleSizeRange":5.0,
+					   "particleDuration":0.3,
+					   "particleCount":8,
+					   "particleColor":[250,10,45,255]},
+	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
+	"projectileSpecId":"unstable_bolt",  # projectile that will be fired
+	"fireSoundTwo":"plasma_cannon_fire_rbp",
+}

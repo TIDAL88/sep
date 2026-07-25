@@ -1,0 +1,32 @@
+{
+  "variantId": "shrouded_banshee_tenebrous",
+  "hullId": "shrouded_banshee",
+  "displayName": "Tenebrous",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "exoparticle_jet",
+        "WS0002": "exoparticle_jet",
+        "WS0003": "exoparticle_jet"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "rift_lightning",
+        "WS0005": "rift_lightning"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

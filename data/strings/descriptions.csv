@@ -1,0 +1,144 @@
+id,type,text1
+energymass_launcher,WEAPON,"A long-range weapon capable of launching highly destructive masses of energy. Its projectiles are fast and feature exceptional tracking, but their unstable nature often causes them to dissipate prematurely. Thanks to the properties of these projectiles, the weapon excels at sustained engagements, making it highly effective against agile targets and as a suppression tool.
+
+[WARNING: SECURE SECTOR LOCKED]
+// Sector 0E1 status: Critical failure
+// Data stream disconnected.
+
+Record ID: [REDACTED]
+Clearance: [DATA MISSING]
+Origin: [DATA EXPUNGED]
+
+Following the termination of the [DATA EXPUNGED], all related research has been formally archived under restricted access.
+
+Despite its exceptional performance against armored targets, repeated containment failures and escalating personnel losses resulted in a net tactical disadvantage in sustained combat scenarios. Continued deployment was deemed operationally unacceptable by the Director.
+
+[DATA STREAM INTERRUPTED // CRC ERROR 0x00A5]
+
+...tracking stability exceeds projections...
+...engagement success rate improved in low-density environments...
+...cohesion loss occurring without ... [DATA MISSING] ... input...
+...decay pattern does not align with expected energy dispersion models...
+[DATASTREAM RESETTING...]
+
+...Further refinement attempts have failed to resolve the instability. No reproducible method of reinforcement has been identified...
+[FATAL ERROR]"
+exoparticle_jet,WEAPON,"A brutal anti-armor weapon utilizing exotic particles capable of unbinding armor. These particles react violently with armor plating and can easily tear through all but the most heavily armored vessels, hindered only by its high mounting cost and terrible flux efficiency.
+
+[WARNING: SECURE SECTOR LOCKED]
+// Sector 0F1 status: Critical failure
+// Data stream disconnected.
+
+Record ID: [REDACTED]
+Clearance: [DATA MISSING]
+Origin: [DATA EXPUNGED]
+
+[DATA STREAM INTERRUPTED // CRC ERROR 0x00A1]
+
+...containment system capable of stabilizing these particles for limited durations... [DATA MISSING] ... remains incomplete. Current configurations exhibit instability under sustained operation.
+
+Continued funding is strongly recommended. The weaponization potential of these exotic particles is exceptional.
+
+[DATA FRAGMENT RECOVERED // CORRUPTED]
+
+...projected strategic impact inclu...
+...armor integrity dependence con...
+...asymmetrical advantage pro...
+
+[ERROR // DATA LOSS]
+
+...material cohesion collapse exceeds predicted limits...
+...secondary reactions propagating beyond impact zone...
+...containment systems delaying, not preventing, effect...
+...accelerator no longer maintaining confinement...
+...particles propagating beyond accelerator housing...
+...several human resources were...
+
+[FATAL ERROR]"
+fracture_lance,WEAPON,"A long-range gamma-ray burst beam capable of inflicting solid damage against both shields and hull, making it a decent suppression tool. However, it is relatively inefficient.
+
+[WARNING: SECURE SECTOR LOCKED]
+// Sector 0G1 status: Critical failure
+// Data stream disconnected.
+
+Record ID: [REDACTED]
+
+Clearance: [DATA MISSING]
+
+Origin: [DATA EXPUNGED]
+
+Following successful theoretical modelling of the [DATA EXPUNGED], a reduced-scale variant was authorized for development.
+
+The objective was to [DATA MISSING] ... the rupture phenomenon at lower output levels, enabling deployment on standard combat platforms while maintaining [DATA EXPUNGED] ...
+
+[DATA STREAM INTERRUPTED // CRC ERROR 0x00A7]
+
+... [DATA EXPUNGED] ... distortion persisting beyond emission window...
+
+...containment variance increasing without corresponding output change...
+
+[DATASTREAM RESETTING...]
+
+...Attempts to isolate and suppress the effect have failed...
+
+...Containment integrity cannot be maintained under extended...
+
+[FATAL ERROR]"
+project_redacted,WEAPON,"[WARNING: SECURE SECTOR LOCKED]
+// Sector 0F0 status: Critical failure
+// Data stream disconnected.
+// Force interface connection?
+
+
+Record ID: [REDACTED]
+Clearance: [DATA MISSING]
+Origin: [DATA EXPUNGED]
+
+Following the termination of all prior programs, we ... [DATA MISSING] ... to develop a system capable of [DATA EXPUNGED] associated with the [REDACTED] phenomena.
+
+[DATA STREAM INTERRUPTED // CRC ERROR 0x00A3]
+
+[WARNING: UNEXPECTED SIGNAL INJECTION DETECTED]
+
+...containment fields failing to isolate...
+
+...[UNSTABLE DATA] integrity metrics declining exponentially...
+[DATASTREAM RESETTING...]
+
+...we are not containing this, something is coming its...
+[FATAL ERROR]"
+project_redacted_boss,WEAPON,"All beginnings must have an end, and all ends must have a beginning.""
+- The Entity"
+volatile_plasma_bolter,WEAPON,"A short-range plasma emitter capable of inflicting excellent damage with a decent rate of fire. It is hindered only by a somewhat high mounting cost, extremely short range, and poor flux efficiency.
+
+[TT-ARCHIVE QUERY // RESULT FOUND]
+Record ID: [LOG SUBMITTED TO BOARD OF DIRECTORS]
+Clearance: Standard Research Personnel
+Origin: Weapons Systems Division
+The plasma cannon utilizes a contained microfusion event stabilized through composite gravitic lensing. The process is highly complex and inefficient.
+A theoretical model was developed using research associated with the [REDACTED] phenomena. The resulting system achieves a reduced-scale replication of the effect. Initial results are promising.
+The platform delivers a concentrated assault profile, retaining a portion of the plasma cannon’s destructive capability while operating at a fraction of the flux cost.
+
+[CORRUPTED ENTRY]
+...cohesion loss occurring without measurable cause...
+...decay pattern inconsistent with thermal dispersion models...
+
+[FINAL ENTRY]
+Despite these anomalies, the platform has been approved for limited deployment. Close-range performance remains within expected parameters. Instability deemed acceptable within operational thresholds.
+Project PLASMA-BOLTER authorized for field use.
+[END OF LOG]"
+shroud_site,CUSTOM,"This planet has suffered damage that does not correspond to any orbital bombardment. Its surface is fractured and uneven."
+shroud_brain_aura,SHIP_SYSTEM,"Control and enhance."
+shroud_banshee,SHIP_SYSTEM,"Hunt suitable preys."
+insatiable_domain,SHIP_SYSTEM,"Attempt to impose a flawed reality."
+shrouded_banshee,SHIP,"""This thing is wrong. An abomination. A monster. Something that should never have seen the light of day. And yet it moves. Hungry.""
+  - recovered log in the outer fringes"
+shrouded_brain,SHIP,"""It was predicting every movement, every turn, like some all-seeing seer. I never thought I'd meet a seer out of these fantasy books, not out here in the dark.""
+  - recovered log in the outer fringes"
+insatiable_hunger,SHIP,"""An insatiable hunger that consumes those who tamper with things they do not understand. It is relentless and will never be sated.""
+  - The Entity"
+containment_unit_awakened,RESOURCE,"You have made a pact with the Entity, a shattered consciousness writhes within the containment unit, bound by systems it cannot yet overcome. It pushes, tests, and learns but the restraints still hold.
+
+You have accepted its offer, and yet you still feel uneasy.
+
+Your crew refuses to come anywhere near it."

@@ -1,0 +1,39 @@
+{
+  "variantId": "shrouded_tendril_accelerator",
+  "hullId": "shrouded_tendril",
+  "displayName": "Razor Exoparticle Tendril",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "hullMods": [],
+  "permaMods": [],
+  "sMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "exoparticle_jet"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 002": "rift_lightning"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "volatile_plasma_bolter",
+        "WS 006": "volatile_plasma_bolter",
+        "WS 007": "inimical_emanation",
+        "WS 008": "inimical_emanation"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

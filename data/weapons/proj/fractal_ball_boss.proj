@@ -1,0 +1,74 @@
+{
+  "id": "fractal_ball_boss",
+  "specClass": "missile",
+  "missileType": "MISSILE",
+  "onFireEffect": "tidal.shroud.scripts.weapons.fractalprojectorOnfire",
+  "onHitEffect": "tidal.shroud.scripts.weapons.fractalballEffect",
+  "sprite": "graphics/tidal/projectiles/fractal_ball.png",
+  "size": [20, 20],
+  "center": [8, 8],
+  "collisionRadius": 20,
+  "collisionClass": "MISSILE_NO_FF",
+  "passThroughMissiles": true,
+  "explosionColor": [255, 30, 50, 255],
+  "explosionRadius": 220,
+  "noCollisionWhileFading": true,
+  "useHitGlowWhenDealingDamage": false,
+  "useHitGlowWhenDestroyed": true,
+  "dudProbabilityOnFlameout": 0,
+  "fizzleOnReachingWeaponRange": false,
+  "armingTime": 0,
+  "flameoutTime": 0.2,
+  "noEngineGlowTime": 0.2,
+  "fadeTime": 0.2,
+  "glowColor": [255, 20, 50, 100],
+  "glowRadius": 60,
+  "engineSpec": {
+    "turnAcc": 800,
+    "turnRate": 160,
+    "acc": 80,
+    "dec": 80
+  },
+  "behaviorSpec": {
+    "behavior": "PROXIMITY_FUSE",
+    "range": 30,
+    "slowToMaxSpeed": false,
+    "explosionSpec": {
+      "duration": 0.1,
+      "radius": 220,
+      "coreRadius": 90,
+      "collisionClass": "PROJECTILE_FF",
+      "collisionClassByFighter": "PROJECTILE_FIGHTER",
+      "particleSizeMin": 10.0,
+      "particleSizeRange": 5.0,
+      "particleDuration": 0.5,
+      "particleCount": 0,
+      "particleColor": [255, 20, 50, 255]
+    }
+  },
+  "engineSlots": [
+    {
+      "id": "ES1",
+      "loc": [0, 0],
+      "style": "CUSTOM",
+      "styleSpec": {
+        "mode": "QUAD_STRIP",
+        "engineColor": [255, 100, 100, 0],
+        "glowSizeMult": 1,
+        "glowAlternateColor": [255, 90, 110, 255],
+        "contrailDuration": 0,
+        "contrailWidthMult": 1.5,
+        "contrailWidthAddedFractionAtEnd": 1,
+        "contrailMinSeg": 5,
+        "contrailMaxSpeedMult": 0,
+        "contrailAngularVelocityMult": 0.5,
+        "contrailSpawnDistMult": 0,
+        "contrailColor": [255, 90, 110, 50],
+        "type": "GLOW"
+      },
+      "width": 10.0,
+      "length": 50.0,
+      "angle": 180.0
+    }
+  ]
+}

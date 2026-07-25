@@ -1,0 +1,12 @@
+id,name,iconPath,npcSpawnWeight,plugin
+#Dustkeeper,,,,
+sc_malevolent_energy,Malevolent Energy,graphics/tidal/malevolent.png,1,tidal.shroud.skills.MalevolentEnergy
+sc_dimensional_whirlpool,Dimensional Whirlpool,graphics/tidal/whirlpool.png,1.5,tidal.shroud.skills.DimensionalWhirlpool
+sc_dimensional_mastery,Dimensional Mastery,graphics/tidal/mastery.png,1,tidal.shroud.skills.DimensionalMastery
+sc_hunger_surge,Hunger Surge,graphics/tidal/surge.png,1.5,tidal.shroud.skills.HungerSurge
+sc_hunger_for_blood,Hunger For blood,graphics/tidal/forblood.png,1,tidal.shroud.skills.HungerForBlood
+sc_uncanny_agility,Uncanny Agility,graphics/tidal/uncanny.png,1,tidal.shroud.skills.UncannyAgility
+sc_piercing_gaze,Piercing Gaze,graphics/tidal/piercing.png,2.5,tidal.shroud.skills.PiercingGaze
+sc_veiled_efficiency,Veiled Efficiency,graphics/tidal/efficiency.png,1.5,tidal.shroud.skills.VeiledEfficiency
+sc_shrouded_ascendancy,Shrouded Ascendancy,graphics/tidal/ascendancy.png,2.5,tidal.shroud.skills.ShroudedAscendancy
+sc_veiled_resiliency,Veiled Resiliency,graphics/tidal/resiliency.png,1.5,tidal.shroud.skills.VeiledResiliency

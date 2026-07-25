@@ -1,0 +1,9 @@
+{
+  "id": "shroud_brain_aura",
+  "type": "STAT_MOD",
+  "aiType": "TARGETING_FEED",
+  "statsScript": "tidal.shroud.scripts.shipsystems.ShroudedBrainAuraStats",
+  "useSound": "system_targeting_feed",
+  "aiHints": {
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "ruleCommandPackages": [
+    "tidal.shroud.campaign.rulecmd"
+  ],
+
+  "graphics": {
+          "tidal_portraits": {
+          "entity":"graphics/portraits/entity.png"      
+        },
+
+    "dweller": {
+      "shrouded_maw_base": "graphics/ships/shroud/maw_base.png",
+      "shrouded_maw_glow": "graphics/ships/shroud/maw_glow.png",
+      "shrouded_spot_cluster": "graphics/ships/shroud/spot_cluster.png",
+      "shrouded_eye_cluster1": "graphics/ships/shroud/eye_cluster1.png",
+      "shrouded_eye_cluster2": "graphics/ships/shroud/eye_cluster2.png",
+      "shrouded_eye_cluster3": "graphics/ships/shroud/eye_cluster3.png",
+      "shrouded_eye_base_dark": "graphics/ships/shroud/eye_circle4.png",
+      "shrouded_eye_iris": "graphics/ships/shroud/eye_iris.png",
+      "shrouded_hunger": "graphics/tidal/ships/shrouded_hunger.png",
+      "shrouded_banshee": "graphics/tidal/ships/shrouded_banshee_flat.png",
+      "shrouded_brain": "graphics/tidal/ships/shrouded_brain_flat.png",
+
+      "shrouded_tendril_base": "graphics/ships/shroud/shroud_tendril_base.png",
+      "shrouded_maelstrom_base": "graphics/ships/shroud/maelstrom_base.png",
+      "shrouded_vortex_base": "graphics/ships/shroud/vortex3.png",
+      "shrouded_vortex_base2": "graphics/ships/shroud/vortex2.png",
+
+      "clusterB": "graphics/ships/shroud/clusterB.png",
+      "dweller_pieces": "graphics/ships/shroud/shrouded_blobs.png"
+    }
+  }
+}

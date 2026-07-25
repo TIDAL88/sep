@@ -1,0 +1,10 @@
+{
+  "id": "shroud_banshee",
+  "type": "STAT_MOD",
+  "aiType": "CUSTOM",
+  "aiScript": "tidal.shroud.scripts.shipsystems.ShroudBansheeSystemAI",
+  "statsScript": "tidal.shroud.scripts.shipsystems.ShroudBansheeStats",
+  "useSound": "system_phase_cloak_activate",
+  "aiHints": {
+  }
+}

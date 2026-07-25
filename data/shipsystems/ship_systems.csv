@@ -1,0 +1,4 @@
+name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,isPhaseCloak,tags,icon
+Neural Web,shroud_brain_aura,0,0,0,0,0,0,0,1,400,0.5,400,0.5,0,true,false,false,false,false,false,false,false,false,false,false,"buff, shrouded",graphics/icons/hullsys/targeting_feed.png
+Banshee's Scream,shroud_banshee,0,0,0,0,0,0,0,1,25,0.3,10,0.4,18,false,false,false,false,false,false,false,false,false,false,false,"teleport, shrouded",graphics/icons/hullsys/targeting_feed.png
+Forced Reality,insatiable_domain,0,0,0,0,0,0,0,1,20,0.4,12,0.5,24,false,false,false,false,false,false,false,false,false,false,false,"buff, domain, shrouded",graphics/icons/hullsys/high_energy_focus.png

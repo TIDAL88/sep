@@ -1,0 +1,5 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+dweller HullmodTidal,dweller_hullmod_tidal,0,,,dweller,,,,TRUE,TRUE,0,0,0,0,data.hullmods.DwellerHullmodTidal,,,
+The Banshee's Scream,td_banshee_scream_subsystem,0,,Shrouded Dweller,"dweller, special, no_drop, no_drop_salvage, restricted",,,,FALSE,FALSE,0,0,0,0,data.hullmods.BansheeScreamSubsystemHullmod,"Granted by the Entity’s unfathomable power. It forced a manifestation into submission and bound it to a vessel.
+This core contains the remains of a Shrouded Banshee manifestation, repurposed to grant the vessel space-warping capabilities.
+Unlike other designs, this configuration avoids the typical crew losses. The manifestation is fully subjugated and incapable of independent thought. Crew report unease in its presence, while AI cores show no such response.",Open a breach in space and time and travel to a new location.,graphics/tidal/hullmods/shrouded_brain.png

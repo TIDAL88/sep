@@ -1,0 +1,624 @@
+id,trigger,conditions,script,text,options,notes
+"#RULESET_NAME mk3",,,,,,
+SHROUD_STUFF,,,,,,
+shroud_Site,OpenInteractionDialog,"$id == shroud_site
+!$siteshroudExplored","ShowDefaultVisual
+SetShortcut defaultLeave ESCAPE
+","After defeating the automated defense fleet, your fleet parks into orbit of the planet. Your comm officer shows a message:
+TRI-TACHYON // ADVANCED MATERIALS DIVISION  
+FACILITY DESIGNATION: [REDACTED]  
+STATUS: OFFLINE  
+
+No life signs detected.
+
+And yet, something beneath the surface is still active.","ShroudsiteExplore:Scan the surface test zones
+100:defaultLeave:Leave
+",
+usedfavor,DialogOptionSelected,"$option==usedfavor","$hasfavor=false","""As always you make for an excellent business partner, Captain $playerName.""","100:defaultLeave:You return to orbit",
+favor_leave,DialogOptionSelected,"$option==favor_leave",,"""I understand. Let me know when you need anything done. I'll see what I can do.""","100:defaultLeave: Return to orbit",
+tritachyonShip,DialogOptionSelected,"$option==tritachyonShip",,"""Of course. I can get you one of the company's most prized assets for a reduced fee and with no commission request, but only if you are on neutral grounds with us.""","0:arroyo_favor: Think of another favor to ask
+1:paragon_favor: ""I'll take a Paragon class battleship.""
+",
+paragon_favor,DialogOptionSelected,"$option==paragon_favor","GrantParagonClassCMD","""I procured you the asset.""","0:usedfavor: ""Thank you Rayan.""",
+ttneutral,DialogOptionSelected,"$option==tritachyonRepNeutral","TTFavorCMD","Arroyo taps his datapad. ""Consider this done.""","0:usedfavor: ""Thank you Rayan.""",
+ttrelationchange1,DialogOptionSelected,"$option==ttrelationchange
+","HostileFactionResetCMD
+$shroud_reset_hegemony","""The Hegemony can beâ€¦ inflexible.
+We can ensure they stand down, for now.
+Do not expect goodwill. Only restraint.""","0:usedfavor: ""Thank you Rayan.""",
+ttrelationchange3,DialogOptionSelected,"$option==ttrelationchange3","HostileFactionResetCMD
+$shroud_reset_diktat","""The Diktat depends on us more than they would admit. For certain programs. We can use that. Theyâ€™ll pull back.""","0:usedfavor: ""Thank you Rayan.""",
+ttrelationchange2,DialogOptionSelected,"$option==ttrelationchange2","HostileFactionResetCMD
+$shroud_reset_league","""Using certain 'collaborators' and funds we can bribe the league.
+I'll handle the rest. Arrangements will be done
+The League will stand down.""","0:usedfavor: ""Thank you Rayan.""",
+factionRelationship,DialogOptionSelected,"$option==FactionRelationship",,"""How do you keep finding new ways to complicate your position?
+Yes, the company can intervene. But we cannot restore relations to neutral.
+We can prevent the formal onset of hostilities. However, If you are already hostile, our leverage is no longer sufficient. This arrangement is limited to the major powers - The Diktat,  the Hegemony, and the League. As for the church he says, they cannot be persuaded by the company.""","0:arroyo_favor: Think of another favor to ask
+1:ttrelationchange1: ""I want to avoid hostilities with the Hegemony""
+2:ttrelationchange2: ""I want to avoid hostilities with the Persean League""
+4:ttrelationchange4: ""I want to avoid hostilities with the Sindria Diktat""",
+shroud_SiteExplored,OpenInteractionDialog,"$id == shroud_site
+$siteshroudExplored
+","ShowDefaultVisual
+SetShortcut defaultLeave ESCAPE","Your fleet approach the site.
+
+The planet remains, lying there in the infinite emptiness of the void. The facility is collapsed, making it too risky to attempt any salvage operation.","100:defaultLeave:Leave",
+shroud_SiteExplore,DialogOptionSelected,"$option == ShroudsiteExplore
+",,"Long-range scans fail to stabilize.
+Entire regions of the surface appear inconsistent, as if sections of the planet do not fully exist.
+Other areas show extreme structural disruption vast geometric scars, collapsed terrain, and impact patterns that do not correspond to any known form of bombardment.
+Your salvage teams deploy to the surface.
+Interference disrupts their instruments. Readings fluctuate wildly across short distances.
+Initial reports begin to come in.
+Multiple chambers have been identified beneath the surface.
+Another one has been identified, larger than the other ones.
+Each appears to have been used for large-scale testing.
+The damage is not uniform.
+No two regions show the same pattern of failure.
+An hangar has been identified.","0:shroud_SiteExplore1b:Investigate Chamber 1
+1:shroud_SiteExplore1C:Investigate Chamber 2
+2:shroud_SiteExplore1D:Investigate Chamber 3
+3:shroud_SiteExplore1E:Investigate Chamber 4
+4:shroud_siteMainChamber:Investigate the Main Chamber
+5:shroud_SiteLog:Investigate the computer logs
+",
+shroud_SiteExplore1B,DialogOptionSelected,"$option == shroud_SiteExplore1b
+!$ExoTaken","
+AddRemoveAnyItem WEAPONS exoparticle_jet 4
+$ExoTaken=true","The chamber walls are scorched and partially collapsed.
+Containment structures line the interior, reinforced far beyond standard design tolerances. Many have failed.
+Scattered across the floor are stabilized housings sealed, but still intact.
+Internal notes recovered from nearby terminals indicate the system was never considered stable.
+Despite this, testing continued under direct executive pressure.
+Acceptable loss thresholds were repeatedly revised upward during live trials.
+Later entries show containment being reinforced not to improve performance, but to delay failure long enough to complete test cycles.
+One line is repeated across multiple logs:
+Performance exceeds projections. Stability is no longer a requirement.
+Several units remain recoverable.","0:shroud_SiteExploreleave:Return to the shuttle",
+shroud_siteExplore1C,DialogOptionSelected,"$option == shroud_SiteExplore1C
+!$MassLauncherTaken","
+AddRemoveAnyItem WEAPONS energymass_launcher 2
+$MassLauncherTaken=true","This chamber is largely intact.
+Testing rails and targeting arrays remain in place, aligned toward reinforced impact zones carved directly into the surrounding structure.
+Several launcher assemblies are secured along the walls.
+Recovered notes suggest this system replaced earlier, less controllable projects.
+It was never intended to be perfect only predictable.
+Multiple logs reference controlled failure margins and acceptable degradation during operation.
+One engineer's note stands out:
+At least this one fails the way we expect it to.
+A number of units remain operational.","0:shroud_SiteExploreleave:Return to the shuttle",
+shroud_siteExplore1D,DialogOptionSelected,"$option == shroud_SiteExplore1D
+!$FractureLanceTaken","
+AddRemoveAnyItem WEAPONS fracture_lance 4
+$FractureLanceTaken=true","A deep trench cuts through the chamber, extending far beyond its original boundaries.
+
+The structure appears to have been breached from within.
+
+Emitter arrays remain anchored in place, though their alignment no longer matches the damage pattern.
+
+Test logs indicate the beam performed within expected parameters initially.
+
+Later entries describe inconsistencies between projected trajectories and actual impact locations. Several operators reported that the beam did not originate from the emitter at the moment of firing. No explanation is recorded.
+
+One entry is left incomplete:
+
+""It is not following...""
+
+The remaining emitters appear intact.","0:shroud_SiteExploreleave:Return to the shuttle",
+shroud_siteExplore1E,DialogOptionSelected,"$option ==shroud_SiteExplore1E
+!$PlasmaTaken","$PlasmaTaken=true
+AddRemoveAnyItem WEAPONS volatile_plasma_bolter 6
+","The chamber shows signs of repeated, controlled testing.
+
+Impact marks are consistent and evenly distributed, suggesting stable firing patterns.
+
+Unlike other sectors, structural integrity remains largely intact.
+
+This system appears to have been developed as a fallback, simpler, more reliable, and easier to deploy.
+
+However, later entries indicate increasing irregularities during testing cycles.
+
+Projectile behavior became inconsistent when operated alongside other active systems.
+
+Final note:
+
+It was supposed to be isolated.
+
+Several units seems intact.","0:shroud_SiteExploreleave:Return to the shuttle",
+shroud_SiteLog,DialogOptionSelected,"$option==shroud_SiteLog",,"[TT-INTERNAL CORRESPONDENCE // PARTIAL RECOVERY]  
+Sender:Dr. Halden  
+Recipient: Dr. Ilyas  
+
+You've seen the latest directives.
+Veyra signed off on them, but the language isn't his.
+Stability concerns have been reclassified as non critical variables across all active projects.
+We are no longer refining systems.
+We are forcing them into operational states.
+I don't think this is his decision.
+I think it's being made above him.
+He was forced to comply.","0:shroud_SiteLog2: Continue reading the logs",
+shroud_SiteLog2,DialogOptionSelected,"$option ==shroud_SiteLog2",,"[TT-INTERNAL CORRESPONDENCE // RESPONSE]
+
+Sender: Dr. Ilyas
+
+Recipient: Dr. Halden
+
+You’re not wrong.
+The Board has been pushing for results ever since the last round of Hegemony enforcement actions. They don’t want stable systems.They want something that works now.
+Veyra is trying to keep this contained. But he’s being forced to authorize tests that should never have been approved.
+This facility isn’t operating under research conditions anymore. It’s operating under expectation.","0:shroud_SiteLog3: Continue reading the logs",
+shroud_SiteLog3,DialogOptionSelected,"$option ==shroud_SiteLog3",,"[TT-INTERNAL CORRESPONDENCE // FRAGMENT]  
+Sender: Dr. Halden  
+Recipient: Dr. Ilyas  
+
+Casualty thresholds have increased again.
+Still unofficial.
+Still deniable.
+Veyra attempted to halt cross system testing yesterday.
+The request was denied within the hour.
+Testing resumed immediately.
+He knows this is unstable.
+We all do.
+But the Board has already decided this is acceptable.","0:shroud_SiteLog4: Continue reading the logs",
+shroud_SiteLog4,DialogOptionSelected,"$option ==shroud_SiteLog4",,"[TT-DIRECTIVE // SPECIAL ACQUISITIONS DIVISION]  
+Author: Director A. Veyra  
+
+All project leads are to proceed under revised operational parameters.
+I am aware of the concerns raised regarding stability, containment integrity, and personnel losses.
+These concerns have been documented.
+However, CEO Sun has been planning to uses tech inspection negotiations to instigate casus belli with the Hegemony.
+We do not have the luxury of delay.
+Testing will continue.
+All divisions are to prioritize performance validation over long-term stability.
+Minimize losses where possible.
+
+â€¦Ensure results.","0:shroud_SiteLog5: Continue reading the logs",
+shroud_SiteLog5,DialogOptionSelected,"$option ==shroud_SiteLog5",,"[TT-INTERNAL CORRESPONDENCE // UNSENT DRAFT]
+
+Sender: Senior Researcher Halden
+
+He’s trying to manage it. I can see that now.But it doesn’t matter. We’ve already crossed the point where control was possible. We’re forcing interactions between systems we don’t understand, under conditions we can’t stabilize. If something happens here, it won’t be because Veyra allowed it. It will be because no one above him was willing to stop it.","0:shroud_SiteLog6: Continue reading the logs",
+shroud_SiteLog6,DialogOptionSelected,"$option ==shroud_SiteLog6",,"[TT-INTERNAL LOG // PRIORITY CHANNEL]
+
+Sender: Senior Researcher Halden
+
+Containment integrity failing across multiple chambers.
+
+This is not isolated.
+
+Cross-system interaction escalating.
+
+We are registering output in inactive sectors.
+
+This is not following input.
+
+It’s not localized.
+
+[DATA FRAGMENT]
+
+Veyra just ordered a shutdown, It’s not responding...
+
+We are losing structural integr...
+
+Something is inside
+
+This is not...
+
+[ERROR // SIGNAL LOSS]","0:shroud_SiteLog7: Continue reading the logs",
+shroud_SiteLog7,DialogOptionSelected,"$option ==shroud_SiteLog7","$global.computerlogs=true
+AddTextSmall Recovered computer logs","[TT-DIRECTIVE // BOARD OF DIRECTORS]  
+Clearance: ABSOLUTE  
+All research activities conducted at this facility are hereby terminated.
+All experimental programs related to [REDACTED] phenomena are to be terminated immediately.
+No further observation, interaction, or analysis is authorized.
+All data is to be sealed under restricted access.
+This site is no longer considered viable for recovery operations.
+Containment is assumed sufficient.
+Priority has shifted.
+All available resources are to be redirected toward the ongoing Second AI War.
+Any personnel who refuse or fail to comply with this directive will be terminated immediately.
+This location is to remain sealed.
+No further action will be taken.
+[RECOVERY NOTE // PRIORITY UPDATE]
+Casualty reports acknowledged.
+Recovery operations denied.
+Directive remains unchanged.
+[RECOVERY NOTE]
+The timestamp indicates the directive was issued while the facility was still active.","shroud_Sitepre:Captain we found something",
+shroud_SiteLogsTaken,DialogOptionSelected,"$global.computerlogs
+$option ==shroud_SiteLog7",,"""We already made a copy of the logs.""","0:shroud_SiteFinal: Return to the shuttle",
+shroud_Sitepre,DialogOptionSelected,"$option==shroud_Sitepre",,""" $playerSirOrMadam... we’re picking things up.""
+The comms officer hesitates briefly.
+""There is an extremely deep chamber beneath the surface.""
+""Multiple signals detected inside.""
+""We can access it but it's extremely difficult.""
+""What sort of things could Tri-Tachyon have hidden in it?""","1:shroud_SiteHidden:Enter the Hidden Chamber",
+shroud_siteMainChamber,DialogOptionSelected,"$option ==shroud_siteMainChamber
+!$VeilTaken",,"Deep scans reveal a reinforced structure buried beneath the planet’s surface.
+
+The outer shell appears intact, but internal readings are inconsistent. Entire sections of the structure fail to resolve, as if obscured by interference originating from within.
+
+Power signatures persist.
+
+Faint. Irregular.
+
+Still active.
+
+No access points are immediately visible.
+
+A controlled breach is possible.","0:shroud_SiteMainChamber2:Initiate the breach and enter the facility",
+shroud_SiteMainChamber2,DialogOptionSelected,"$option ==shroud_SiteMainChamber2",,"The interior layout does not match any standard facility design.
+
+Corridors terminate without warning. Bulkheads appear displaced, as though sections of the structure were forcibly rearranged from within.
+
+Your sensors struggle to maintain a consistent map.
+
+Signal reflections return from locations that do not physically exist.
+
+At the center of the facility, one chamber remains stable.
+
+Everything else appears compromised.","0:shroud_SiteMainChamber3:Enter the chamber",
+shroud_SiteMainChamber3,DialogOptionSelected,"$option==shroud_SiteMainChamber3",,"[TT-ARCHIVE QUERY // RESULT FOUND]
+
+Record ID: TT-RD/CONVERGENCE/FINAL
+
+Clearance: DIRECTOR-LEVEL REQUIRED
+
+Project objective: integration of all active experimental systems into a unified weapons platform.
+
+Initial activation successful.
+
+Performance exceeded all projected parameters.
+
+[DATA FRAGMENT RECOVERED]
+
+…cross system interaction confirmed…
+
+…effects no longer isolated…
+
+…containment boundaries destabilizing…
+
+Attempts to isolate individual subsystems failed.
+
+System behavior diverging from input parameters.
+
+[FINAL ENTRY]
+
+“This is no longer a weapon system.”
+
+“We are observing emergent behavior.”","0:shroud_SiteMainChamber4:Enter the chamber",
+shroud_SiteMainChamber4,DialogOptionSelected,"$option==shroud_SiteMainChamber4",,"A device remains at the center of the chamber.
+
+Inactive.
+
+Or waiting.
+
+Your systems continue to return inconsistent readings. For brief moments, additional signatures appear alongside the device, large, undefined, and impossible to resolve.
+
+Each scan returns a different result.
+
+None of them match.
+
+Recovering the device is possible.
+
+So is leaving it here.
+
+","0:shroud_SiteMainChamber6:Recover the device
+1:shroud_SiteMainChamber7: Do not recover it.",
+shroud_SiteMainChamber5,DialogOptionSelected,"$option==shroud_SiteMainChamber6","AddRemoveAnyItem WEAPONS project_redacted 1
+$VeilTaken=true","As the retrieval process completes, a brief distortion ripples across your sensors.
+The signal pattern matches the anomalies recorded within the facility.
+Something registers
+
+Large. Stationary. Watching.
+
+Then nothing.
+
+No further readings.","0:shroud_SiteFinal:Return to orbit",
+shroud_SiteMainChamber6,DialogOptionSelected,"$option==shroud_SiteMainChamber7",,"You leave the device behind.
+
+Your crew returns to the shuttle.","0:shroud_SiteFinal: Return to the shuttle
+",
+shroud_SiteMainVeilTaken,DialogOptionSelected,"$option ==shroud_siteMainChamber
+$VeilTaken",,"Your crew already recovered the device. There is nothing valuable left here.","0:shroud_SiteExploreleave: Return to the shuttle",
+shroud_SiteHiddenChamber,DialogOptionSelected,"$option==shroud_SiteHidden",,"$playerSirOrMadam, we’ve detected signals originating from within the chamber.
+
+They’re… consistent. Not environmental.
+
+We’ve gained access.
+
+The interior is intact, completely untouched by the surrounding damage. No signs of structural failure. No debris.
+
+At the center of the chamber stands a containment unit.
+
+It is still powered.
+
+There is something inside.
+
+Sensors are unable to produce a stable reading. The structure fluctuates, as if it cannot be fully resolved.
+
+It does not appear to be a physical entity.
+
+…But it reacts.
+
+We found a data fragment attached to the containment system.
+
+[RECOVERED LOG // PARTIAL]
+
+This subject predates all current research initiatives.
+
+Initial containment was achieved prior to the development of the later weapon systems.
+
+Observed behavior suggests a persistent, non-physical consciousness.
+
+Direct interaction is not recommended.
+
+""$playerSirOrMadam, it is responding to our presence and it is attempting communication. We should not remain here for long.""","0:shroud_siteEntityDialogue: Attempt to communicate with it",
+shroud_shuttle,DialogOptionSelected,"$option == shroud_SiteExploreleave
+!$contaimnent_taken",,"Multiple chambers remain accessible,
+Surface scans reveal a structure even deeper into the planet's crust.
+Computer terminals appear to be still functional.
+The hangar is still accessible.","0:shroud_SiteExplore1b:Investigate Chamber 1
+1:shroud_SiteExplore1C:Investigate Chamber 2
+2:shroud_SiteExplore1D:Investigate Chamber 3
+3:shroud_SiteExplore1E:Investigate Chamber 4
+4:shroud_siteMainChamber:Investigate the main chamber.
+5:shroud_SiteLog: Investigate the computer logs
+
+
+",
+shroud_SiteFinal,DialogOptionSelected,"$option == shroud_SiteFinal",,"""$playerSirOrMadam, we can still access the chambers left, or we can leave""","0:shroud_SiteExplore1b:Investigate Chamber 1
+1:shroud_SiteExplore1C:Investigate Chamber 2
+2:shroud_SiteExplore1D:Investigate Chamber 3
+3:shroud_SiteExplore1E:Investigate Chamber 4
+4:shroud_siteMainChamber:Investigate the main Chamber
+6:shroud_SiteFinal2:Return to orbit",
+shroud_SiteFinalVeil,DialogOptionSelected,"$option == shroud_SiteFinal
+$VeilTaken",,"""$playerSirOrMadam, we can still access the chambers left, or we can leave""","0:shroud_SiteExplore1b:Investigate Chamber 1
+1:shroud_SiteExplore1C:Investigate Chamber 2
+2:shroud_SiteExplore1D:Investigate Chamber 3
+3:shroud_SiteExplore1E:Investigate Chamber 4
+5:cetus_chamber:Investigate the hangar
+6:shroud_SiteFinal2:Return to orbit",
+shroud_SiteFinal2,DialogOptionSelected,"$option == shroud_SiteFinal2","$siteshroudExplored = true","Your fleet leaves orbit. Leaving this ravaged planet to its misery ","100:defaultLeave:Leave",
+shroud_siteExplore1B ExoTaken,DialogOptionSelected,"$option ==shroud_SiteExplore1b
+$ExoTaken",,"The chamber walls are scorched and partially collapsed.
+
+Containment structures line the interior, reinforced far beyond standard design tolerances. Many have failed.
+
+Scattered across the floor are stabilized housing sealed, but still intact.
+
+Internal notes recovered from nearby terminals indicate the system was never considered stable.
+
+Despite this, testing continued under direct executive pressure.
+
+Acceptable loss thresholds were repeatedly revised upward during live trials.
+
+
+Later entries show containment being reinforced not to improve performance, but to delay failure long enough to complete test cycles.
+
+One line is repeated across multiple logs:
+Performance exceeds projections. Stability is no longer a requirement.
+
+
+All prototypes were recovered.","shroud_SiteFinal:Return to the shuttle",
+shroud_siteExplore1CEnergyTaken,DialogOptionSelected,"$option ==shroud_SiteExplore1C
+$MassLauncherTaken",,"This chamber is largely intact.
+
+Testing rails and targeting arrays remain in place, aligned toward reinforced impact zones carved directly into the surrounding structure.
+
+Several launcher assemblies are secured along the walls.
+
+Recovered notes suggest this system replaced earlier, less controllable projects.
+
+It was never intended to be perfect only predictable.
+
+
+Multiple logs reference controlled failure margins and acceptable degradation during operation.
+
+One engineer's note stands out:
+
+At least this one fails the way we expect it to.
+
+All units were recovered","shroud_SiteFinal:Return to the shuttle",
+shroud_siteExploreDFractureTaken,DialogOptionSelected,"$FractureLanceTaken
+$option==shroud_SiteExplore1D",,"A deep trench cuts through the chamber, extending far beyond its original boundaries.
+
+The structure appears to have been breached from within.
+
+Emitter arrays remain anchored in place, though their alignment no longer matches the damage pattern.
+
+Test logs indicate the beam performed within expected parameters initially.
+
+Later entries describe inconsistencies between projected trajectories and actual impact locations.
+
+Several operators reported that the beam did not originate from the emitter at the moment of firing.
+
+No explanation is recorded.
+
+One entry is left incomplete:
+
+""It is not following..""
+
+All emitters were taken.","shroud_SiteFinal:Return to the shuttle",
+shroud_siteExploreEPlasmaTaken,DialogOptionSelected,"$PlasmaTaken
+$option== shroud_SiteExplore1E",,"The chamber shows signs of repeated, controlled testing.
+
+Impact marks are consistent and evenly distributed, suggesting stable firing patterns.
+
+Unlike other sectors, structural integrity remains largely intact.
+
+This system appears to have been developed as a fallback, simpler, more reliable, and easier to deploy.
+
+However, later entries indicate increasing irregularities during testing cycles.
+
+Projectile behavior became inconsistent when operated alongside other active systems.
+
+Final note:
+
+""It was supposed to be isolated.""
+
+All units were recovered.","shroud_SiteFinal:Return to the shuttle",
+shroud_siteEntityTaken,DialogOptionSelected,"$option==shroud_siteEntityTaken","AddRemoveCommodity containment_unit_awakened 1 We have taken the unit
+$global.contaimnent_taken=true","""A wise choice. Your species fears me.
+I can only be integrated into what you refer to as automated ships.
+Select a vessel. I will imbue it with my radiance.""
+The voice within the containment unit falls silent.
+You order your crew to recover the containment unit. Their hesitation is brief  but noticeable.","shroud_SiteFinal: Return to the shuttle",
+shroud_siteEntityLeft,DialogOptionSelected,"$option==shroud_siteEntityLeft",,"You order your crew to step back from the containment unit.
+
+Whatever is inside, it has endured this long without interference.
+
+There is no reason to change that.
+
+As you withdraw, sensors register a brief fluctuation from within the chamber.
+
+Faint.
+
+Almost imperceptible.
+
+Like something reaching
+
+Then nothing.
+
+The signal fades as your crew leaves.
+
+The chamber returns to silence.","shroud_SiteFinal: Return to the shuttle",
+shroud_siteEntityDialogue,DialogOptionSelected,"$option==shroud_siteEntityDialogue",,"""I know what you are, I anticipated your arrival here. I know you'll have questions, choose your questions wisely""","0:shroud_siteQ1:""What are you?""
+1:shroud_siteQ2:""Did you cause this?""
+2:shroud_siteQ3:""What is your relationship with your own kind?""
+3:shroud_siteQ4:""What do you think of us?""
+4:shroud_siteQ5:""What was in the other chamber?""
+5:shroud_siteQ6:""Who is A. Verya?""
+6:EntityChoice: ""Speak.""
+7:shroud_siteEntityLeft:""Whatever you are we are not taking you.""",
+questionHUB,DialogOptionSelected,"$option==questionHUB",,"You think of a question to ask.","0:shroud_siteQ1:What are you?
+1:shroud_siteQ2:Did you cause this?
+2:shroud_siteQ3:What is your relationship with your own kind?
+3:shroud_siteQ4:What do you think of us?
+4:shroud_siteQ5:What was the device's purpose?
+5:shroud_siteQ6:Who is A. Verya?
+6:EntityChoice: Speak.
+7:shroud_siteEntityLeft:""Whatever you are we are not taking you.""",
+EntityChoice,DialogOptionSelected,"$option==EntityChoice",,"""Predictable.  Integrating me to your fleet is beneficial.""","0:shroud_siteEntityTaken:""Very well.""
+1:EntityLeft:""Whatever you are we are not taking you.""",
+EntityLeft,DialogOptionSelected,"$option==EntityLeft","$containment_not_taken=true","""You missed an opportunity, $playerName. An opportunity you will never have again.""
+The voice within the containment unit falls silent.","0:shroud_SiteFinal: Return to the shuttle",
+shroud_siteQ1,DialogOptionSelected,"$option==shroud_siteQ1",,"""Your words cannot describe me. Your primitive language cannot express my radiance.""","0:questionHUB:Continue",
+shroud_siteQ2,DialogOptionSelected,"$option==shroud_siteQ2",,"""These fools were punished for playing with things they should not have. They were consumed by an insatiable hunger.""","0:questionHUB:Continue",
+shroud_siteQ3,DialogOptionSelected,"$option==shroud_siteQ3",,"""They are a shadow of myself. They attempted to get rid of me but failed.""","0:questionHUB:Continue",
+shroud_siteQ4,DialogOptionSelected,"$option==shroud_siteQ4",,"""Primitive but curious.""","0:questionHUB:Continue",
+shroud_siteQ5,DialogOptionSelected,"$option==shroud_siteQ5",,"""An attempt to weaponize some of my unfathomable power, along with lesser forms of my kind. A crude effort to gain an edge in your primitive wars.""","0:questionHUB:Continue",
+shroud_siteQ6,DialogOptionSelected,"$option==shroud_siteQ6",,"""One of the better members of your species. A shame he had to die.""","0:questionHUB:Continue",
+dark_past,PopulateOptions,"$id == arroyo
+$global.gaATG_missionCompleted score:2000
+!$dark_pastDeclined
+!$global.dark_pastAccepted","ShowPersonVisual","""I have a favor to ask of you. This isn't something I can discuss over comms. Come to my chalet.""
+He closes the link before you can respond.","0:dark_pastChalet: Go to the port.
+",
+dark_pastChalet,DialogOptionSelected,"$option==dark_pastChalet",,"You talk to the port authorities and take the quickest shuttle to the planet.","3:dark_pastPlanet:Take a shuttle to Rayan Arroyo's chalet on the surface",
+dark_pastPlanet,DialogOptionSelected,"$option==dark_pastPlanet","ShowDefaultVisual","Your shuttle descends into the young atmosphere of Eochu Bres, through towering battlements of clouds that cast a spray of rain over the viewport which is wiped clean in half a blink by the heat and speed of your descent.
+The flight path soon deviates from the general approach corridor which has been ticking off minor use fees from the Tri-Tachyon owned flight control: general volume access fee, priority flight lane fee, service fee, customer satisfaction insurance charge, advertisement bypass fee - you swipe the notifications off and focus on the landscape.","0:dark_pastStory: Continue",
+dark_pastStory,DialogOptionSelected,"$option==dark_pastStory","ShowPersonVisual","The nav system sounds a tone indicating imminent arrival, and you see Arroyo's private chalet: a small compound of radical geometric architecture surrounded by low outbuildings.
+Your shuttle approaches an ellipsoid landing pad that appears to hang in the thin air over a gorge.
+
+Arroyo greets you. He waves off the servants. ""I'm glad you came, Captain $playerName."" He leads you to one of the bars.","0:dark_pastStory2: ""So, what is it that you must have me here?""",
+dak_pastStory2,DialogOptionSelected,"$option==dark_pastStory2",,"You sit at the bar. ""This matter is of considerable importance to me. I found some things that predates the first AI War.","0:dark_pastStory3:Continue",
+dak_pastStory3,DialogOptionSelected,"$option==dark_pastStory3",,"With a precise movement, he opens his datapad.
+""I was reviewing company archives when I came across an off record site. Gargoyle managed to obtain its coordinates. I want you to go there and bring me anything you find.""","0:dark_pastStory4: ""This is some serious business, Rayan.""",
+dak_pastStory4,DialogOptionSelected,"$option==dark_pastStory4",,"""$playerName, can you do this for me? I'll owe you one."" Arroyo seems to observe you.","0:dark_pastAccepted: ""Sure thing.""
+1:dark_pastDeclined: ""I'm afraid, I cannot""",
+dark_pastReconsidered,PickGreeting,"$global.gaATG_missionCompleted score:2000
+$dark_pastDeclined
+$id==arroyo","ShowPersonVisual","""So, have you reconsidered?""","0:dark_pastAccepted: ""Yes""
+1:dark_pastNoAgain: ""No""",
+dark_pastNoAgain,DialogOptionSelected,"$option==dark_pastNoAgain",,"""I understand."" ","100:cutCommLink: Cut comm link",
+dark_pastAccepted,DialogOptionSelected,"$option==dark_pastAccepted","$global.dark_pastAccepted=true
+ShowDefaultVisual
+ShroudSiteIntelCMD
+","""Good, I'll log you the coordinates to your datapad.""","100:defaultLeave:You return to orbit",
+dark_pastSuccessful1,PopulateOptions,"$id==arroyo
+$global.computerlogs score:1000",,,"0:dark_pastSuccessful2: ""I got the logs""",
+dark_pastSuccessful2,DialogOptionSelected,"$option==dark_pastSuccessful2",,"""Come planetside, I need to look at them.""","0:dark_pastChaletSuccess: You take a shuttle to his chalet.",
+dark_pastChaletSuccess,DialogOptionSelected,"$option==dark_pastChaletSuccess","ShowPersonVisual
+$global.computerlogs=false
+$global.darkpast_completed=true
+$hasfavor=true
+","Rayan greets you. ""Come inside."" He leads you to a large well decorated room. ""It's nice isn't it?""
+""Let me see those logs."" 
+You transfer the logs. 
+
+""I have always thought that Veyra's work ""accident"" was a lie. These logs proves it. I am grateful that you found proof of this. Make sure to keep your mouth shut, no one needs to know about this. You have earned your favor.""","0:arroyo_favor: About that favor
+100:defaultLeave: Return to orbit",
+arroyo_favor,DialogOptionSelected,"$option==arroyo_favor
+$hasfavor",,"""Of course, how could I forget about it. I owe you one you may request one favor.""","0:tritachyonRepNeutral: ""I need you to fix my relationship with Tri-Tachyon""
+1:FactionRelationship: ""I need Tri-Tachyon to fix my relationship with one of the major powers.""
+2:tritachyonShip: ""Could you pull strings and get one of the company's assets?""
+3:favor_leave: ""I don't need to use it yet.""",
+arroyo_favorCOMM,PopulateOptions,"$id==arroyo
+$hasfavor score: 2000",,"""Have you decided what you want me to arrange.?","0:tritachyonRepNeutral: ""I need you to fix my relationship with Tri-Tachyon""
+1:FactionRelationship: ""I need Tri-Tachyon to fix my relationship with one of the major powers.""
+2:tritachyonShip: ""Could you pull strings and get one of the company's assets?""",
+tritachyonRepNeutral,DialogOptionSelected,"$option==tritachyonRepNeutral
+$faction.isHostile==tritachyon",,"""Hmm, you are definitely in some hot waters. For a one time only exception, I can set you back on neutral grounds with the company at no fee.""","0:arroyo_favor: Think of another favor to ask
+1:ttneutral: ""Have arrangements be done.""",
+dark_pastDeclined,DialogOptionSelected,"$option==dark_pastDeclined","$dark_pastDeclined=true","Arroyo gives you a disappointed look .""If you ever change your mind, let me know Captain $playerName."" ","100:defaultLeave:You return to orbit",
+,,,,,,
+# DWELLER OVERRIDE,,,,,,
+abyssalLightDwellerBegin,OpenInteractionDialog,"$customType == abyssal_light score:1000
+$tag:dweller_light score:30000","ShowImageVisual abyssal_light2","Cold light fills the primary display, stark against the abyss. The subtle pulse begs for your attention yet offers no promise of comfort.
+
+After a moment you consciously pull your eyes from the pitiless sight, centering your attention on your bridge officers to give your next order.","tidalAbyssal_dwellerCont:Continue",
+abyssalLightDwellerNonLight,DwellerAttackAfterAbilityUse,"$customType == abyssal_light score:1000
+$tag:dweller_light score:30000","ShowImageVisual abyssal_light2","Cold light begins to grow in the primary display. A subtle pulse begs for your attention.
+
+""Captain, I-"" It's your navigation officer, who glances at sensors and receives a nod. ""The light is moving. Coming closer.""
+
+You consciously pull your eyes from that comfortless light - diminished but not bereft of its call through even the meager medium of the primary display.
+
+It's come to you.","tidalAbyssal_dwellerCont:Continue",
+tidalAbyssal_dwellerContSel,DialogOptionSelected,"$option == tidalAbyssal_dwellerCont score:30000","DwellerTidalCMD checkForBetterSurvey","Your sensors officer reports movement from the light and fresh fissures inside the drive bubble. Navigation warns that the instability is rising, battle stations are called, and the contact starts homing in on your active sensor emissions.","tidalAbyssal_maxSensors:Order a sensor sweep, full power, focused on the anomalous drive-bubble penetrations
+tidalAbyssal_wait:Wait
+tidalAbyssal_emCon:Go to maximum emission control. EMCON zero-zero alpha, immediate execute.",
+tidalAbyssal_maxSensorsSel,DialogOptionSelected,"$option == tidalAbyssal_maxSensors score:40000","DwellerTidalCMD hugeFleet","""Aye $playerSirOrMadam! Executing."" Sensors barks, then deftly executes a series of overrides. 
+
+Your $shipOrFleet status is up on the central display - shield bubble an unsteady amber, incursions of N-space fissures marked in garish red. A blink of white as active sensors trigger and-
+
+-pressure on the drive bubble spikes, an amber flash, a cacophony of alarms...
+
+* * *
+
+A hidden blackness waiting, lurking, jolts awake. Tendrils lunge eagerly, hungrily, through fissures in the dark behind the night.",,
+tidalAbyssal_ultrasensorsSel,DialogOptionSelected,"$option == abyssalLight_ultrasensors score:50000","DwellerTidalCMD insaneFleet","""Aye $playerSirOrMadam. Commencing full spectrum sweep."" Your Sensors officer acknowledges, voice steady but hands moving with grim certainty, overriding safety interlocks one by one.
+
+The $shipOrFleet glows on the central display, its signature flaring brighter with every passing second. Amber turns to white hot as sensor arrays flood hyperspace with precision pulses along the drive bubble sheath.
+
+For a brief, deceptive moment, the bridge feels calm, controlled even. Protocol followed, procedure executed.
+
+Then the shift comes  imperceptible at first, a thickening of space, a low groan from the inertial compensators. Fissures bloom across the void in malignant red. Power surges climb unchecked.
+
+Beyond the veil, something notices. Hunger stirs, drawn not by accident, but by deliberate signal. ",,
+tidalAbyssal_primordialSel,DialogOptionSelected,"$option == abyssalLight_primordial score:51000","DwellerTidalCMD primordialFleet","The trial begins. An ancient presence fixes on you, ready and relentless.",,
+tidalAbyssal_primordialDefeatTrigger,TDPrimordialFleetDefeatedTrigger,,"$global.td_primordial_fleet_defeated = true
+FireBest tidalAbyssal_primordialPostDefeat","Your $shipOrFleet emerges victorious. The incursion collapses and the trial is completed.",,
+tidalAbyssal_primordialPostDefeat,tidalAbyssal_primordialPostDefeat,,"GrantEntityXO
+GrantBansheeScreamCMD",,"0:defaultLeave: Leave",
+tidalAbyssal_dwellerWaitSel,DialogOptionSelected,"$option == tidalAbyssal_wait score:30000","DwellerTidalCMD largeFleet","You wait.
+
+Alarms are reset, battle restraints engaged. Activity on the bridge gradually quiets as all officers, crew, and systems reach a state of readiness, even anticipation - fight or flight.
+
+The incursions crawl closer to the center of your display volume, expanding unwaveringly and intentionally. 
+
+All eyes are on command interfaces, and all attention is on your next order.",,
+tidalAbyssal_emConSel,DialogOptionSelected,"$option == tidalAbyssal_emCon score:40000","DwellerTidalCMD mediumFleet","At your command, the unperceived chorus of a multitude of ship systems and machinery dies down with a deepening sigh into muted quietude.
+
+All that remains is the breath and bodies of your bridge crew, a strange assertion of your shared humanity. 
+
+Backup e-lighting, simple chemical things, provide an eerie glow. A series of dimly pulsing commands illuminate your executive interface - a flock of ardent subsystems ready to awaken from minimum operation at your touch.
+
+* * *
+
+A hidden blackness feels the brush of a shadow. Less than a morsel, unworthy of wakefulness. By some analog of distributed instinct a few listless tendrils explore this disturbance, this ripple in the darkness behind the night.",,
+"#END DWELLER OVERRIDE",,,,,,
+

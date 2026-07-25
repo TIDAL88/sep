@@ -1,0 +1,79 @@
+{
+  "hullName": "Shrouded Brain",
+  "hullId": "shrouded_brain",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tidal/ships/shrouded_brain_flat.png",
+  "style": "DWELLER",
+  "height": 447,
+  "width": 558,
+  "center": [274, 296],
+  "collisionRadius": 302,
+  "shieldCenter": [0, 1],
+  "shieldRadius": 299,
+  "viewOffset": 0,
+  "builtInMods": [
+    "dweller_hullmod_tidal"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 359,
+      "angle": 0,
+      "locations": [52.5, 110]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 359,
+      "angle": -0,
+      "locations": [51, -123]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 359,
+      "angle": 0,
+      "locations": [-10, 57]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 359,
+      "angle": 15.5,
+      "locations": [-18, -66]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-184.5, 2],
+      "length": 86.214111,
+      "width": 48.046928,
+      "angle": -178,
+      "contrailSize": 48.046928,
+      "style": "DWELLER"
+    }
+  ],
+  "bounds": [
+    75.5, -87,
+    27.5, -168,
+    -24.5, -124,
+    -87.5, -164,
+    -122.5, -74,
+    -227.5, 33,
+    -139.5, 54,
+    -100, 101,
+    -37.5, 75,
+    11, 187.5,
+    63.5, 53,
+    76, -11
+  ]
+}

@@ -1,0 +1,43 @@
+{
+    "id":"project_redacted",
+    "specClass":"projectile",
+    "onFireEffect":"tidal.shroud.scripts.weapons.fractalprojectorOnfire",
+    "everyFrameEffect":"tidal.shroud.scripts.weapons.FractalProjectorChargeEffect",
+
+    "type":"ENERGY",
+    "mountTypeOverride":"ENERGY",
+    "size":"LARGE",
+
+    "turretSprite":"graphics/tidal/weapons/fractal_projector.png",
+    "turretGlowSprite":"graphics/tidal/weapons/fractal_projector_glow_turret.png",
+    "hardpointSprite":"graphics/tidal/weapons/fractal_projector_hardpoint.png",
+    "hardpointGlowSprite":"graphics/tidal/weapons/fractal_projector_glow_hardpoint.png",
+
+    "hardpointOffsets":[20, 0],
+    "turretOffsets":[12, 0],
+    "hardpointAngleOffsets":[0],
+    "turretAngleOffsets":[0],
+
+    "barrelMode":"ALTERNATING",
+    "chargeTime":5.0,
+    "interruptibleBurst":true,
+
+    "animationType":"GLOW_AND_FLASH",
+    "glowColor":[255,15,45,255],
+
+    "smokeSpec":{
+        "particleSizeMin":16.0,
+        "particleSizeRange":18.0,
+        "cloudParticleCount":8,
+        "cloudDuration":1.5,
+        "cloudRadius":10.0,
+        "blowbackParticleCount":4,
+        "blowbackDuration":2.0,
+        "blowbackLength":22.0,
+        "blowbackSpread":15.0,
+        "particleColor":[125,15,25,105]
+    },
+
+    "projectileSpecId":"fractal_ball",
+    "fireSoundTwo":"project_redacted_firing"
+}

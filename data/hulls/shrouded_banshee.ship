@@ -1,0 +1,84 @@
+{
+  "hullName": "Shrouded Banshee",
+  "hullId": "shrouded_banshee",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/tidal/ships/shrouded_banshee_flat.png",
+  "style": "DWELLER",
+  "height": 167,
+  "width": 294,
+  "center": [147, 83.5],
+  "collisionRadius": 165,
+  "shieldCenter": [-0.5, 1.5],
+  "shieldRadius": 159,
+  "viewOffset": 0,
+  "builtInMods": [
+    "dweller_hullmod_tidal"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 234,
+      "angle": 3.5,
+      "locations": [24, -64]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 227,
+      "angle": -1.5,
+      "locations": [4, -4]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": -8.5,
+      "locations": [21, 58]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 234,
+      "angle": 3.5,
+      "locations": [-29, -61.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 234,
+      "angle": -3.5,
+      "locations": [-29, 61.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-29.5, 7],
+      "length": 58.560951,
+      "width": 35.077915,
+      "angle": 178.5,
+      "contrailSize": 35.077915,
+      "style": "DWELLER"
+    }
+  ],
+  "bounds": [
+    56, 44,
+    37, 109.5,
+    -21.5, 62,
+    -60.5, 15,
+    -60.5, -15,
+    -21.5, -62,
+    37, -109.5,
+    56, -44
+  ]
+}

@@ -1,0 +1,3 @@
+id,name,categories,spawnWeight,color,tags,order,plugin
+#All aptitudes require a matching entry in default_ranks.json: executive_officer_aptitudeId,,#can not use multiple aptitudes of the same category,"#Used for Procgen, not for NPCs. NPCs are decided in the plugin",,,,
+td_abyssdiver,Resonance,,0,"136,8,8,255",,916,tidal.shroud.skills.AptitudeShroudWalker

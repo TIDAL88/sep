@@ -1,0 +1,22 @@
+{
+  "project_redacted_chargeup": [
+    {"file":"sounds/shroud/project_redacted_chargeup.ogg","pitch":1.00,"volume":1.0}
+  ],
+  "project_redacted_firing": [
+    {"file":"sounds/shroud/project_redacted_firing.ogg","pitch":1.00,"volume":1.0}
+  ],
+  "fractal_rift_opening": [
+    {"file":"sounds/shroud/fractal_rift_opening.ogg","pitch":1.00,"volume":1.0}
+  ],
+  "fractal_rift_closure": [
+    {"file":"sounds/shroud/fractal_rift_closing.ogg","pitch":1.00,"volume":1.0}
+  ],
+  "td_primordial_domain_sound": [
+    {"file":"sounds/sfx_systems/mote_attractor_targeted_ship_01.ogg","pitch":0.8,"volume":0.6}
+  ],
+  "music": {
+    "music_td_primordial_hunger": [
+      {"file":"36. Might Makes Right And Might Alone! (AGL Jiren Finish Skill 2).ogg","source":"sounds/shroud","volume":0.1}
+    ]
+  }
+}

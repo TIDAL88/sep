@@ -1,0 +1,10 @@
+{
+    "masterVersionFile":"https://raw.githubusercontent.com/TIDAL88/redacted_bullshit_pack/refs/heads/master/SEP.version?token=GHSAT0AAAAAAECBPXPYXH6KCNVYUIQRTDGI2TFHEAQ",
+    "modName":"Shroud Expansion Pack",
+    "modVersion":
+    {
+        "major":0,
+        "minor":9,
+        "patch":6
+    },
+}

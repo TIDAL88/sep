@@ -1,0 +1,25 @@
+{
+  "variantId": "shrouded_brain_seer",
+  "hullId": "shrouded_brain",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "rift_lightning",
+        "WS0002": "rift_lightning",
+        "WS0003": "rift_lightning",
+        "WS0004": "rift_lightning"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}
